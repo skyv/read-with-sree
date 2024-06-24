@@ -9,14 +9,14 @@ type Props = {
 }
 
 async function getData(id: number) {
-	const item = sampleBooksData.find((data) => data.id === Number(id));
+	const item:Book = sampleBooksData.find((data) => data.id === Number(id)) || {};
 	return item;
 }
 
 const BookDetailPage = async ({ params }: Props) => {
 	const id = params.id
 
-	const item: Book = await getData(id)
+	const item:Book = await getData(id);
 
 	return (
 		<BookDetail item={item} />
