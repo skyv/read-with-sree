@@ -1,15 +1,4 @@
-import { User, Book } from "../interfaces";
-
-/** Dummy user data. */
-export const sampleUserData: User[] = [
-  { id: 101, name: "Alice" },
-  { id: 102, name: "Bob" },
-  { id: 103, name: "Caroline" },
-  { id: 104, name: "Dave" },
-];
-
-// { id: 110, title: "", author: "", description: "", rating: 2, status: "", imgUrl: "" },
-
+import { Book } from "../interfaces";
 
 export const sampleBooksData: Book[] = [
   { id: 100, title: "AfterWards", author: "Jaishree Misra", description: "When Rahul Tiwari arrives in Kerala for a short break from London, he has no premonition of a life-changing moment. But one glance over the fence at his lovely but reticent neighbour. Maya is enough to launch him on a path of no return. He finds himself playing friend, partner, co-conspirator, and finally the entirely unexpected role of saviour as Maya, suffocating under the weight of a loveless marriage and a suspicious husband, turns to him for help. With characteristic case and insight, Jaishree Misra writes in her new novel of the transforming power of love and of the joy and heartbreak of giving yourself to another, for better or for worse. ", rating: 3.3, status: "read", imgUrl: "/gallery/afterwards.jpg", category: "", publishedOn: "2004", thumbnailUrl: "" },
