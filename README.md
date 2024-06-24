@@ -1,5 +1,8 @@
 # React Next.js example
 
+View the application here:
+https://read-with-sree-skyvs-projects.vercel.app
+
 This is a really simple project that shows the usage of Next.js with React.
 
 <img width="1470" alt="read-with-sree-home-page" src="https://github.com/skyv/read-with-sree/assets/6735514/6d83ed82-e8fc-4700-b78f-fcb53fbecdb9">
