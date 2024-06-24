@@ -1,0 +1,78 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Playwrite+SK:wght@100..400&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Permanent+Marker&family=Playwrite+SK:wght@100..400&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Monoton&family=Permanent+Marker&family=Playwrite+SK:wght@100..400&display=swap');
+
+
+.font-title {
+  font-family: "Anton", sans-serif;
+}
+
+.font-mainfont {
+	font-family: "Barlow", sans-serif;
+}
+
+body {
+	font-family: monospace, sans-serif;
+}
+
+.font-name-title {
+	/* font-family: "Permanent Marker", cursive; */
+	/* font-family: "Monoton", sans-serif; */
+	/* font-family: "Great Vibes", cursive; */
+	font-family: "SignPainter", sans-serif;
+	color: orchid;
+}
+
+.font-sub-title {
+	font-family: "Playwrite SK", cursive;
+}
+
+
+.smooth-transition {
+	transition: all ease-in-out 0.3s;
+}
+
+.show-menu {
+	display: flex;
+	position: fixed !important;
+	margin-top: 0;
+	margin-right: 0;
+	width: 100vw;
+	background-color: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(5px);
+	left: 0;
+	padding: 1rem;
+	overflow-x: hidden;
+	z-index: 40;
+	font-weight: 600;
+	color: black;
+	height: 100vh;
+}
+
+@layer utilities {
+	.book-zoom {
+    @apply relative flex items-center justify-center overflow-hidden rounded-md ;
+  }
+  .book-zoom-image {
+    @apply transition-all duration-500 ease-in-out transform shadow-sm cursor-pointer object-cover object-center;
+  }
+  .book-zoom:hover .book-zoom-image {
+    @apply scale-150;
+  }
+	.status-badge {
+		@apply hidden;
+	}
+	.book-zoom:hover .status-badge {
+    @apply inline;
+  }
+}
