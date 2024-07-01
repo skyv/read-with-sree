@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 
 
 import * as api from '../../../services/index.js';
-import { useEffect, useState } from "react";
+import { FormEvent, MouseEvent, useEffect, useState } from "react";
 import { Dispatch } from "@reduxjs/toolkit";
 
 const addBookApi = async (dispatch: Dispatch<IGetAllAssets>, book: Book, emptyBook: Book): Promise<void> => {
@@ -56,11 +56,16 @@ const AddBook = () => {
 		setBookData(newItem);
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		addBookApi(dispatch, newBook, newItem)
 		clear();
 		push('/books');
+	};
+	  
+	const handleButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		handleSubmit(e as any);
 	};
 
 	const validateForm = () => {
@@ -213,7 +218,7 @@ const AddBook = () => {
 				</button>
 				<button
 					type="button"
-					onClick={(e) => handleSubmit(e)}
+					onClick={handleButtonClick}
 					className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-gray-600"
 					disabled={!isFormValid}
 				>

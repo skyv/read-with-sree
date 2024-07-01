@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 
 import * as api from '../../../../services/index.js';
-import { useEffect, useState } from "react";
+import { FormEvent, MouseEvent, useEffect, useState } from "react";
 import { Dispatch } from "@reduxjs/toolkit";
 
 const editBookApi = async (dispatch: Dispatch<IGetAllAssets>, book: Book, emptyBook: Book): Promise<void> => {
@@ -52,12 +52,17 @@ const EditBook = () => {
 	const cancel = () => {
 		push('/books');
 	};
-
-	const handleSubmit = async (e) => {
+	
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		editBookApi(dispatch, newBook, newItem)
+		editBookApi(dispatch, newBook, newItem);
 		push('/books');
-	};
+	  };
+	  
+	  const handleButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault(); 
+		handleSubmit(e as any);
+	  };
 
 	return (
 		<form className="p-4 pr-6 pb-6">
@@ -207,7 +212,7 @@ const EditBook = () => {
 				</button>
 				<button
 					type="button"
-					onClick={(e) => handleSubmit(e)}
+					onClick={handleButtonClick}
 					className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 				>
 					Update

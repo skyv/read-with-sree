@@ -18,7 +18,7 @@ const BookDetail = ({ item: book }: BookDetailProps) => {
           alt="card-image" className="object-cover w-full " />
       </div>
       <div className="px-6">
-        <ReadStatus status={book.status} />
+        <ReadStatus status={book.status ? book.status : ''} />
         <h6
           className="block mb-4 text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
           {book.author}

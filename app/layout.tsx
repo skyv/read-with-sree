@@ -1,7 +1,6 @@
-// "use client";
 import "../styles/globals.css";
 import SideBar from "../components/SideBar";
-declare module 'react-file-base64';
+// declare module 'react-file-base64';
 
 import dynamic from "next/dynamic";
 
