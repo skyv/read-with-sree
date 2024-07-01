@@ -22,7 +22,6 @@ const getBook = async (dispatch:Dispatch<IGetAllAssets>, id: number): Promise<vo
 	  console.log(error);
 	}
   };
-  
 
 const BookDetailPage = ({ params }: Props) => {
 	const id = params.id
@@ -39,7 +38,6 @@ const BookDetailPage = ({ params }: Props) => {
       dispatch(setBookItem({}))
     };
 	}, []);
-
 	return (
 		item?.title ? 
 			<BookDetail item={item} />
