@@ -1,20 +1,39 @@
-import Link from "next/link";
-
-import { Book } from "../../interfaces";
-import { sampleBooksData } from "../../utils/sample-data";
+"use client";
+import { Book, IGetAllAssets } from "../../interfaces";
 import BookList from "../../components/BookList";
+import { useAppSelector } from "@/store";
 
-async function getData() {
-  const items: Book[] = sampleBooksData;
-  return items;
-}
+import { setBooksList } from "@/store/bookSlice";
+import { useAppDispatch } from "@/store";
 
-const WithStaticProps = async () => {
-  const items: Book[] = await getData()
 
+
+import * as api from '../../services/index.js';
+import { useEffect } from "react";
+import { Dispatch } from "@reduxjs/toolkit";
+
+const getBooks = async (dispatch:Dispatch<IGetAllAssets>): Promise<void> => {
+  try {
+    const { data } = await api.fetchBooks();
+    dispatch(setBooksList(data))
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const BookListPage = () => {
+  const items = useAppSelector((state) => state.bookShelf.books);
+  
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    getBooks(dispatch);
+  }, [dispatch]);
+  
   return(
-    <BookList books={items} />
+    <>
+      <BookList books={items} />
+    </>
   )
 };
 
-export default WithStaticProps;
+export default BookListPage;
