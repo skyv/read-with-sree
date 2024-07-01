@@ -5,7 +5,7 @@ import { useAppSelector } from "@/store";
 import { setBooksList, setNewBook } from "@/store/bookSlice";
 import { useAppDispatch } from "@/store";
 
-import FileBase from 'react-file-base64';
+// import FileBase from 'react-file-base64';
 import { useRouter } from 'next/navigation';
 
 

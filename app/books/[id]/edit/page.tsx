@@ -7,7 +7,7 @@ import { useAppDispatch } from "@/store";
 
 import { useRouter } from 'next/navigation';
 
-import FileBase from 'react-file-base64';
+// import FileBase from 'react-file-base64';
 
 
 import * as api from '../../../../services/index.js';
