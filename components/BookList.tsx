@@ -9,7 +9,7 @@ type Props = {
 const BookList = ({ books }: Props) => {
 
   return(
-    <div className="grid grid-cols-3 gap-4 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-4 my-6">
+    <div className="grid grid-cols-3 gap-4 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-4 my-6 ml-3 sm:ml-0">
       {books?.map((item) => (
         <BookItem data={item} key={item.id}/>
       ))}

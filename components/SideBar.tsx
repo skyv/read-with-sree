@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useState } from 'react'
-import CSS from 'csstype'
 import Link from "next/link";
 
 const SideBar = () => {
@@ -33,7 +32,7 @@ const SideBar = () => {
 			</div>
 			
 			<nav
-				className={`main-menu${hiddenMenu ? `` : ` show-menu`} flex-col items-center fixed mt-60 text-2xl gap-5 text-slate-600 hidden md:flex`}
+				className={`main-menu${hiddenMenu ? `` : ` show-menu`} flex-col items-center fixed justify-center min-h-screen text-2xl gap-5 text-slate-600 hidden md:flex`}
 			>
 				<h1 className="sm:text-xl md:text-3xl text-center text-black font-light">
 					<p className="uppercase font-sub-title">Read with</p>
@@ -47,6 +46,10 @@ const SideBar = () => {
 				<Link href="/books" className="hover:text-blue-600 smooth-transition text-xl" 
 					onClick={() => { RemoveMenu() }}>
 					My Book Shelf
+				</Link>
+				<Link href="/books/add" className="hover:text-blue-600 smooth-transition text-xl" 
+					onClick={() => { RemoveMenu() }}>
+					Add to shelf
 				</Link>
 				<Link href="/about" className="hover:text-blue-600 smooth-transition text-xl" 
 					onClick={() => { RemoveMenu() }}>

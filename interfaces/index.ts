@@ -1,4 +1,5 @@
 export type Book = {
+  _id?: number | 0;
   id?: number | 0;
   title?: string | '';
   author?: string | '';
@@ -9,4 +10,8 @@ export type Book = {
   thumbnailUrl?: string | '';
   category?: string | '';
   publishedOn?: string | '';
+}
+
+export interface IGetAllAssets {
+  type: string;
 }
